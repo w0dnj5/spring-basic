@@ -25,4 +25,18 @@ public class SingletonTest {
         // memberService1 != memberService2
         Assertions.assertThat(memberService1).isNotEqualTo(memberService2);
     }
+
+    @Test
+    @DisplayName("싱글톤 패턴을 적용한 객체 사용")
+    void singletonServiceTest() {
+        // private으로 생성자를 막아두었다. 컴파일 오류가 발생한다.
+        //new SingletonService();
+
+        SingletonService instance1 = SingletonService.getInstance();
+        SingletonService instance2 = SingletonService.getInstance();
+
+        System.out.println("singletonService1 = " + instance1);
+        System.out.println("singletonService2 = " + instance2);
+        Assertions.assertThat(instance1).isEqualTo(instance2);
+    }
 }
