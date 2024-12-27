@@ -1,5 +1,6 @@
 package hello.core.member;
 
+// 자바 빈 프로퍼티 규약 예시 (getter, setter)
 public class Member {
 
     private Long id;

@@ -1,5 +1,6 @@
 package hello.core.order;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import hello.core.AppConfig;
@@ -30,6 +31,16 @@ class OrderServiceTest {
         memberService.join(member);
 
         Order order = orderService.createOrder(memberId, "itemA", 10000);
-        Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
+        assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
+/*
+    @Test
+    void fieldInjectionTest() {
+        OrderServiceImpl orderService = new OrderServiceImpl();
+        assertThatThrownBy(() -> orderService.createOrder(1L, "itemA", 10000))
+                .isInstanceOf(NullPointerException.class);
+
+        // 필드 주입 시 테스트 시 유연하게 테스트 할 수 X
+    }
+ */
 }
