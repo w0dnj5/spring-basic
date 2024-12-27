@@ -19,7 +19,7 @@ public class OrderServiceImpl implements OrderService {
     private final MemberRepository memberRepository;
     //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
     //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
-    //@Autowired
+    //@Autowired 하위 타입이 2개 이상일 경우 필드명으로 매핑 ex. DiscountPolicy rateDiscountPolicy
     private final DiscountPolicy discountPolicy;
 /*
     // 생성자가 하나만 있다면 @Autowired 생략 가능
