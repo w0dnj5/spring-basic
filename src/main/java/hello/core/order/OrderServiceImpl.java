@@ -6,10 +6,12 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
     // 필드 주입 방식 (권장하지 않음 - 테스트하기 불편하다)
@@ -19,7 +21,7 @@ public class OrderServiceImpl implements OrderService {
     //private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
     //@Autowired
     private final DiscountPolicy discountPolicy;
-
+/*
     // 생성자가 하나만 있다면 @Autowired 생략 가능
     // 생성자 주입 장점
     // - 개발자 실수를 줄여줌
@@ -32,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
-
+*/
     /* 일반 메소드 주입
     @Autowired
     public void init(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
